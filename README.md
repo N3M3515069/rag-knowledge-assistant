@@ -1,3 +1,14 @@
+---
+title: RAG Knowledge Assistant
+emoji: 📚
+colorFrom: green
+colorTo: blue
+sdk: docker
+sdk_version: "1.0"
+app_file: app.py
+pinned: false
+---
+
 # RAG Knowledge Assistant
 
 A Retrieval-Augmented Generation (RAG) system that answers questions from uploaded PDF documents using LLMs.
