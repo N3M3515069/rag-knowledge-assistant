@@ -10,6 +10,21 @@ A Retrieval-Augmented Generation (RAG) system that answers questions from upload
 - User asks a question — it gets embedded and top 3 relevant chunks are retrieved
 - Retrieved chunks + question are sent to Groq LLM (LLaMA3) to generate an accurate answer
 
+## Design Decisions
+
+### Why IndexFlatL2?
+This project uses **FAISS IndexFlatL2** for vector search because:
+- **Exact search with L2 (Euclidean) distance** — guarantees finding the most similar chunks
+- **Simple and reliable** — no approximation, no hyperparameter tuning needed
+- **Perfect for small corpora** — a single PDF generates only a few hundred chunks, so brute-force search is fast
+
+### Scalability Note
+For large-scale applications (millions of vectors), consider:
+- **IndexIVFFlat** (cluster-based approximate search)
+- **IndexHNSW** (graph-based approximate search)
+
+These trade slight accuracy for massive speed improvements on large datasets.
+
 ## Tech Stack
 - Python
 - pdfplumber (PDF text extraction)
