@@ -27,7 +27,7 @@ def search(query, top_k = 3):
                             })
             
         context = " ".join([r['text'] for r in results])
-        context_str = f"Answer this question based only on the context below.\n\nContext: {context}\n\nQuestion: {query}"
+        context_str = context_str = f"You are a helpful assistant. The following is extracted text from a PDF document. Answer the user's question based only on this content.\n\nContext: {context}\n\nQuestion: {query}"
 
         response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
