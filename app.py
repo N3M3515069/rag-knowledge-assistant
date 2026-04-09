@@ -3,6 +3,9 @@ import streamlit as st
 from retriever import search
 from indexer import build_index
 
+os.makedirs("user_files", exist_ok=True)
+os.makedirs("index", exist_ok=True)
+
 st.title("RAG Knowledge Assistant")
 st.write("Upload a PDF and ask questions about it.")
 
