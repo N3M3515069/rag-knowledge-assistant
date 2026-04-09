@@ -46,6 +46,8 @@ rag-knowledge-assistant/
 │   ├── faiss.index
 │   └── chunks.pkl
 └── requirements.txt
+````
+````
 
 ## Setup & Run
 ```bash
