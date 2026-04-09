@@ -11,6 +11,10 @@ def build_index(pdf_path):
 
     dimension = embedding.shape[1]
 
+    # IndexFlatL2: brute-force exact search using L2 (Euclidean) distance.
+    # Suitable here since corpus size is small (few hundred chunks from a PDF).
+    # For large-scale use, consider IndexIVFFlat (cluster-based) or IndexHNSW (graph-based).
+    
     index = faiss.IndexFlatL2(dimension)
     index.add(embedding) # type: ignore
 
