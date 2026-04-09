@@ -20,10 +20,10 @@ if uploaded_file is not None:
     build_index(pdf_path)
     st.success("Ready! Ask your question below.")
 
-query = st.text_input("Enter your question:")
+    query = st.text_input("Enter your question:")
 
-if query:
-    with st.spinner("Thinking..."):
-        answer = search(query)
-    st.subheader("Answer:")
-    st.write(answer)
+    if query:
+        with st.spinner("Thinking..."):
+            answer = search(query)
+        st.subheader("Answer:")
+        st.write(answer)
